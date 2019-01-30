@@ -1,0 +1,241 @@
+.icon-font::before{
+  font-family: icon-font;
+}
+
+.icon-font{
+  border: none;
+
+  outline: none;
+}
+
+body{
+  margin: 0;
+  padding-top: 60px;
+
+  background-color: #ffffff;
+  font-family: Helvetica, Serif, sans-serif;
+}
+
+#content{
+  padding-left: 20px;
+  padding-bottom: 50px;
+
+  /*position: relative;*/
+
+  text-align: center;
+
+  /*background-color: #cdcdcd;*/
+}
+
+.img-list{
+  padding: 0;
+  margin-right: 10px;
+
+  display: inline-block;
+  vertical-align: top;
+}
+
+.tile{
+  width: 280px;
+  margin-right: 20px;
+  margin-bottom: 20px;
+
+  overflow: hidden;
+
+  text-align: left;
+  border-radius: 10px;
+  background-color: white;
+  border: 1px solid #cdcdcd;
+  list-style: none;
+  transition: all 0.2s;
+  animation: rise-appear 1s;
+}
+
+@keyframes rise-appear {
+  0% {
+    transform: translateY(5px);
+    opacity: 0;
+  }
+  100%{
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.tile:hover{
+  transform: translateY(-2px);
+  box-shadow: 5px 5px 5px #cdcdcd;
+}
+
+.img-wrap{
+  width: 280px;
+
+  background-color: #eee;
+}
+
+.img-wrap img{
+  width: 100%;
+}
+
+.description{
+  margin: 5px 5px 10px;
+
+  font-size: 16px;
+  font-weight: lighter;
+  color: #373737;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+.info{
+  height: 22px;
+  margin: 5px;
+}
+
+.usr{
+  color: #ccc;
+  font-weight: lighter;
+  font-style: italic;
+  font-size: 14px;
+}
+
+.avatar{
+  width: 22px;
+  height: 22px;
+  margin-right: 5px;
+
+  border-radius: 50%;
+
+  vertical-align: middle;
+}
+
+.tile-btn-wrp{
+  float: right;
+  height: 22px;
+  line-height: 22px;
+}
+
+.tile-btn-wrp button{
+  width: 32px;
+  padding: 0;
+  margin-right: 3px;
+
+  text-align: left;
+  background-color: white;
+  color: #ccc;
+  /*background-color: #ff6666;*/
+}
+
+.download-btn::before{
+  content: "\e804";
+  font-size: 1em;
+}
+
+.like-btn{
+  position: relative;
+  top: 0.5px;
+
+  overflow: visible;
+}
+
+.like-btn::before{
+  content: "\e816";
+  font-size: 1.2em;
+  display: inline-block;
+}
+
+.like-btn:hover{
+  color: #888888;
+}
+
+.like-btn[class~='liked']::before{
+  color: #ff6666;
+}
+
+.like-btn[class~='unliked']::before{
+  color: #cccccc;
+}
+
+.unliked-to-liked::before{
+  animation: sway-larger-pink 800ms;
+}
+
+.liked-to-unliked::before{
+  animation: shake-gray 500ms;
+}
+
+@keyframes sway-larger-pink {
+  0% {
+    transform: scale(1) rotate(0);
+    color: #ccc;
+  }
+  10% {
+    transform: scale(1.2) rotate(10deg);
+  }
+  30% {
+    transform: scale(1.3) rotate(-10deg);
+  }
+  50% {
+    transform: scale(1.4) rotate(10deg);
+  }
+  70% {
+    transform: scale(1.5) rotate(-10deg);
+  }
+  80% {
+    transform: scale(1.6) rotate(0deg);
+    color: #ff6666;
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes shake-gray {
+  0% {
+    transform: rotate(0);
+    color: #ff6666;
+  }
+  10% {
+    transform: rotate(5deg);
+  }
+  20% {
+    transform: rotate(-5deg);
+  }
+  30% {
+    transform: rotate(5deg);
+  }
+  40% {
+    transform: rotate(-5deg);
+  }
+  50% {
+    transform: rotate(5deg);
+  }
+  60% {
+    transform: rotate(-5deg);
+  }
+  70% {
+    transform: rotate(0deg);
+  }
+  100% {
+    color: #cccccc;
+  }
+}
+
+.remark-btn:hover:before{
+  display: inline-block;
+}
+
+.remark-btn::before{
+  content: "\e80a";
+  font-size: 1.1em;
+}
+
+.tile-btn-wrp button::before{
+  padding-right: 2px;
+  color: #ccc;
+}
+
+.usr:hover,
+.tile-btn-wrp button:hover{
+  color: #696969;
+}

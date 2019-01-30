@@ -1,0 +1,112 @@
+{% load staticfiles %}
+{% csrf_token %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>搜图</title>
+    <link href="{% static 'css/home.css' %}" rel="stylesheet" type="text/css"/>
+    <link href="{% static 'css/home-header.css' %}" rel="stylesheet" type="text/css"/>
+    <link href="{% static 'css/home-content.css' %}" rel="stylesheet" type="text/css"/>
+    <link href="{% static 'css/skt-modal.css' %}" rel="stylesheet" type="text/css"/>
+    <link href="{% static 'css/upload-modal.css' %}" rel="stylesheet" type="text/css"/>
+    <link href="{% static 'css/detail-modal.css' %}" rel="stylesheet" type="text/css"/>
+{#    <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.3.1.min.js"></script>#}
+    <script src="{% static 'js/jquery.min.js' %}"></script>
+    <script src="{% static 'js/model.js' %}"></script>
+    <script src="{% static 'js/home.js' %}"></script>
+{#    <meta name="viewport" content="width=device-width, initial-scale=1">#}
+</head>
+<body>
+
+<header>
+    <a id="logo"><img src="{% static 'image/logo.png' %}" alt="logo"/></a>
+        <form id="search">
+            <input type="text" placeholder="输入关键字"/>
+            <button class="icon-font" id="search-btn"></button>
+            <button class="icon-font modal-btn" id="skt-btn"></button>
+        </form>
+        <a id="avatar"><img src="{% static 'image/default.jpg' %}" /></a>
+    <button id="upload-btn" class="icon-font modal-btn"></button>
+</header>
+
+<div id="content">
+    <ul id="img-list-0" class="img-list"></ul>
+    <ul id="img-list-1" class="img-list"></ul>
+    <ul id="img-list-2" class="img-list"></ul>
+    <ul id="img-list-3" class="img-list"></ul>
+</div>
+
+<button id="load-btn">加载更多</button>
+<button id="top-btn" class="icon-font"></button>
+
+<div id="modal-overlay" class="no-overlay">
+    <div class="modal modal-hidden" id="skt-modal">
+        <canvas id="draw-pad" width="800px" height="540px"></canvas>
+        <div id="eraser"></div>
+        <div id="skt-btn-wrp">
+            <button id="clear-btn" class="icon-font"></button>
+            <button id="draw-btn" class="icon-font chosen"></button>
+            <button id="erase-btn" class="icon-font"></button>
+            <button id="erase-plus-btn" class="icon-font"></button>
+            <button id="erase-minus-btn" class="icon-font"></button>
+            <button id="skt-done-btn">确认提交</button>
+        </div>
+    </div>
+
+    <div class="modal modal-hidden" id="upload-modal">
+        <div id="preview">
+            <span>图片预览</span>
+        </div>
+        <form id="up-settings">
+            <div id="up-step-1">
+                <input type="file" id="up-file"/>
+                <label for="up-file" id="fake-up-file">浏览文件</label>
+                <div id="file-info">
+                    <p id="file-name">未选择图片</p>
+                    <p id="file-size">未知大小</p>
+                </div>
+            </div>
+            <div id="up-step-2">
+                <textarea id="file-dscp" placeholder="请在此输入图片描述..."></textarea>
+            </div>
+            <div id="up-step-3">
+                <ul id="file-tags"></ul>
+                <input id="add-tag" placeholder="打上标签方便搜索，可选"/>
+            </div>
+            <button id="up-done-btn">确认上传</button>
+        </form>
+    </div>
+
+    <div class="modal modal-hidden" id="detail-modal">
+        <div id="detail-modal-wrp">
+            <div id="display">
+                <img src="{% static "image/default.jpg" %}"/>
+            </div>
+            <div id="detail-info">
+                <div id="author">
+                    <img id="author-avatar" src="{% static "image/default.jpg" %}"/>
+                    <span id="author-name">default</span>
+                </div>
+                <p id="detail-dscp">
+                </p>
+                <div id="detail-btn-wrp">
+                    <button id="detail-like-btn" class="icon-font"></button>
+                    <button id="detail-remark-btn" class="icon-font"></button>
+                    <button id="detail-download-btn" class="icon-font"></button>
+                    <button id="detail-tag-btn" class="icon-font"></button>
+                </div>
+                <ul id="remarks"></ul>
+                <textarea id="add-remark" placeholder="说点什么...（回车发送）"></textarea>
+            </div>
+            <ul id="detail-tags" class="tags-hidden"></ul>
+        </div>
+    </div>
+
+    <button id="last-pic" class="icon-font"></button>
+    <button id="next-pic" class="icon-font"></button>
+</div>
+
+</body>
+</html>

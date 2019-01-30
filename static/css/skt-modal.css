@@ -1,0 +1,250 @@
+#skt-modal{
+  width: 800px;
+  height: 600px;
+  margin-top: -300px;
+  margin-left: -400px;
+
+  position: absolute;
+  left: 50%;
+  display: inline-block;
+  overflow: hidden;
+}
+
+canvas{
+  display: block;
+}
+
+#eraser{
+  height: 41px;
+  width: 41px;
+
+  position: absolute;
+  visibility: hidden;
+  z-index: 100;
+
+  background-color: white;
+  border: 2px solid #cdcdcd;
+  pointer-events: none;
+  border-radius: 8px;
+  transition: background-color 500ms;
+}
+
+#eraser[class~='erasing']{
+  background-color: #cdcdcd;
+}
+
+#skt-btn-wrp{
+  width: 770px;
+  height: 59px;
+  padding-left: 15px;
+  padding-right: 15px;
+  border-top: 1px solid #7bcd40;
+
+  position: relative;
+}
+
+#skt-btn-wrp::before{
+  content: "";
+  width: 0;
+  height: 59px;
+
+  display: inline-block;
+  vertical-align: middle;
+}
+
+#skt-btn-wrp button{
+  padding: 0;
+
+  background-color: white;
+}
+
+#skt-btn-wrp .icon-font{
+  margin-right: 15px;
+}
+
+#clear-btn,
+#draw-btn,
+#erase-btn{
+  width: 32px;
+  height: 32px;
+
+  border-radius: 36px;
+}
+
+#clear-btn{
+  border: 2px solid #ff7873;
+  transition: background-color 200ms;
+}
+
+#clear-btn::before{
+  content: "\e805";
+  font-size: 15px;
+  color: #ff7873;
+  transition: color 200ms;
+}
+
+#clear-btn:hover{
+  border: 2px solid #fb2f27;
+}
+
+#clear-btn:hover::before{
+  color: #fb2f27;
+}
+
+#clear-btn:active{
+  background-color: #fb2f27;
+}
+
+#clear-btn:active::before{
+  color: white;
+}
+
+#draw-btn{
+  border: 2px solid #4acaff;
+}
+
+#draw-btn::before{
+  content: "\e806";
+  font-size: 15px;
+  color: #4acaff;
+}
+
+#draw-btn:hover{
+  border: 2px solid #00aaff;
+}
+
+#draw-btn:hover::before{
+  color: #00aaff;
+}
+
+#draw-btn[class~='chosen']{
+  background-color: #4acaff;
+}
+
+#draw-btn[class~='chosen']::before{
+  color: white;
+}
+
+#draw-btn[class~='chosen']:hover{
+  background-color: #00aaff;
+}
+
+#erase-btn{
+  border: 2px solid #ffe61d;
+}
+
+#erase-btn::before{
+  content: "\f12d";
+  font-size: 15px;
+  color: #ffe61d;
+}
+
+#erase-btn:hover{
+  border: 2px solid #ffcc00;
+}
+
+#erase-btn:hover::before{
+  color: #ffcc00;
+}
+
+#erase-btn[class~='chosen']{
+  background-color: #ffe61d;
+}
+
+#erase-btn[class~='chosen']::before{
+  color: white;
+}
+
+#erase-btn[class~='chosen']:hover{
+  background-color: #ffcc00;
+}
+
+#erase-plus-btn::before{
+  content: '\e807';
+  width: 10px;
+  height: 10px;
+  font-size: 10px;
+
+  display: inline-block;
+}
+
+#erase-minus-btn::before{
+  content: '\e808';
+  width: 10px;
+  height: 10px;
+  font-size: 10px;
+
+  display: inline-block;
+}
+
+#erase-plus-btn, #erase-minus-btn{
+  width: 20px;
+  height: 20px;
+  border: 1px solid #d498ff;
+
+  position: relative;
+  left: -10px;
+  transform: rotate(-180deg);
+
+  border-radius: 20px;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 300ms;
+}
+
+#erase-plus-btn[class~='erasing'], #erase-minus-btn[class~='erasing']{
+  left: 0;
+  transform: rotate(0);
+  opacity: 1;
+  visibility: visible;
+}
+
+#erase-plus-btn::before, #erase-minus-btn::before{
+  color: #d498ff;
+  transition: color 200ms;
+}
+
+#erase-plus-btn:hover, #erase-minus-btn:hover{
+  border: 1px solid #b150f7;
+}
+
+#erase-plus-btn:hover::before, #erase-minus-btn:hover::before{
+  color: #b150f7;
+}
+
+#erase-plus-btn:active, #erase-minus-btn:active{
+  background-color: #b150f7;
+}
+
+#erase-plus-btn:active::before, #erase-minus-btn:active::before {
+  color: white;
+}
+
+#erase-plus-btn[disabled], #erase-minus-btn[disabled]{
+  border: 1px solid #cdcdcd;
+}
+
+#erase-plus-btn[disabled]::before, #erase-minus-btn[disabled]::before{
+  color: #cdcdcd;
+}
+
+#skt-done-btn{
+  width: 80px;
+  height: 27px;
+
+  position: absolute;
+  top: 50%;
+  right: 15px;
+  transform: translateY(-50%);
+
+  border-radius: 30px;
+  border: 1px solid #7bcd40;
+  outline: none;
+  color: #7bcd40;
+  background-color: white;
+}
+
+#skt-done-btn:hover{
+  color: white;
+  background-color: #7bcd40;
+}

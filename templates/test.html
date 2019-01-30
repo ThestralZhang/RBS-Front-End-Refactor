@@ -1,0 +1,41 @@
+{% load staticfiles %}
+{% csrf_token %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Test</title>
+    <link href="{% static 'css/test.css' %}" rel="stylesheet" type="text/css" />
+    <script src="{% static 'js/jquery.min.js' %}"></script>
+    <script src="{% static 'js/test.js' %}"></script>
+</head>
+<body>
+<input type="text" id="a" />
+<input type="text" id="b" />
+<button id="calc-btn">calc</button>
+<div id="result"></div>
+
+{#<div id="ctn">#}
+{#    <div id="ctt-1"></div>#}
+{#    <div id="ctt-2"></div>#}
+{#    <div id="ctt-3"></div>#}
+{#</div>#}
+
+{#<div id="auto-v-m">#}
+{#    <div id="avm-top"></div>#}
+{#    <div id="avm-top2"></div>#}
+{#    <div id="avm-middle"></div>#}
+{#    <div id="avm-bottom"></div>#}
+{#</div>#}
+
+{#<ul id="tags">#}
+{#</ul>#}
+{#<button id="ani-start">ccc</button>#}
+
+<button id="ani-start">start</button>
+<br/><br/>
+<button id="ani-btn"></button>
+
+</body>
+</html>
