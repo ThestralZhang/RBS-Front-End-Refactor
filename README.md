@@ -1,6 +1,6 @@
 # RBS_v3
-I extract the front end part from the program ***Retrieve by Sketch***，
-trying to re-organize and beautify the view.
+I extract the front end part from the program ***Retrieve by Sketch***，  
+trying to re-organize and beautify the view.  
 Though still kind of messy and a lot of work to do.
 
 Here are some scenes:
