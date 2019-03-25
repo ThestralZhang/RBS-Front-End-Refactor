@@ -1,7 +1,7 @@
 # RBS-Front-End-Refactor
 I extract the front end part from the program ***Retrieve by Sketch***，  
 trying to re-organize and beautify the view.  
-Though still kind of messy and a lot of work to do.
+Though still kind of messy and a lot of work to do.  
 The next target is to modularize my program.
 
 Here are some scenes:
